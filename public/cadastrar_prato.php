@@ -17,7 +17,7 @@
 
     <main>
 
-        <h2>Adicione um novo prato!</h2>
+        <h2>Adicione um Novo Prato!</h2>
 
         <form action="public/cadastrar.php" method="POST">
 
