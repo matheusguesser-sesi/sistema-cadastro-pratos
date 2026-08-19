@@ -32,7 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_stmt_close($stmt);
 }
 
-<html lang="en">
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
 
     <meta charset="UTF-8">
@@ -43,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
      
 
-    <form action="../src/cadastrar_usuario.php" method="POST">
+    <form action="../public/cadastrar_usuario.php" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" required><br> <br>
 
