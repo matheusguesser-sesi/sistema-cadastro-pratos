@@ -27,7 +27,7 @@ $usuarios = mysqli_query($conexao, "SELECT id, nome FROM usuarios ORDER BY nome"
 <body>
 
     <header>
-        <h1>Cadastro de Pratos</h1>
+        <h1>​Cadastro de Pratos​</h1>
     </header>
 
     <main>
