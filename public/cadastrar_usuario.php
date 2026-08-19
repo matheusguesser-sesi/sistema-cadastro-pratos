@@ -31,3 +31,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     mysqli_stmt_close($stmt);
 }
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+     
+
+    <form action="../src/cadastrar_usuario.php" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required><br> <br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br> <br>
+
+        <input type="submit" value="Cadastrar">
+
+    </form>
+
+    <button onclick="window.location.href='index.php'"> Voltar </button>
+
+</body>
+</html>
