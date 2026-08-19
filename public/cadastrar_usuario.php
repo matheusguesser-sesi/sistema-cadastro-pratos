@@ -5,6 +5,7 @@ if(!isset($conexao) || $conexao === false) {
     die("Erro: Conexão com o banco de dados não estabelecida.");
 }
 
+$sql = "SELECT * FROM usuarios";
 if ($resultado === false) {
     die("Erro na consulta: " . mysqli_error($conexao));
 }
@@ -12,7 +13,7 @@ if ($resultado === false) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = ($_POST['nome']);
-    $descricao = ($_POST['email']);
+    $email = ($_POST['email']);
 
 
     $sql = "INSERT INTO usuarios (nome, email) VALUES (?, ?)";
@@ -22,14 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Erro ao preparar consulta: " . mysqli_error($conexao));
     }
 
-    mysqli_stmt_bind_param($stmt, 'ssdsi', $nome, $descricao, $preco, $categoria, $usuario_id);
+    mysqli_stmt_bind_param($stmt, 'ss', $nome, $email);
 
     if (mysqli_stmt_execute($stmt)) {
-        echo "Prato cadastrado!";
+        echo "Usuário cadastrado!";
         echo "<br><a href='../index.php'>Voltar</a>";
         exit();
     } else {
-        echo "Erro ao cadastrar prato: " . mysqli_error($conexao);
+        echo "Erro ao cadastrar usuário: " . mysqli_error($conexao);
     }
 
     mysqli_stmt_close($stmt);
