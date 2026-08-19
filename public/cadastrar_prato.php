@@ -6,10 +6,6 @@ if(!isset($conexao) || $conexao === false) {
 }
 
 
-if ($resultado === false) {
-    die("Erro na consulta: " . mysqli_error($conexao));
-}
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = ($_POST['nome']);

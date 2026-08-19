@@ -5,10 +5,6 @@ if(!isset($conexao) || $conexao === false) {
     die("Erro: Conexão com o banco de dados não estabelecida.");
 }
 
-$sql = "SELECT * FROM usuarios";
-if ($resultado === false) {
-    die("Erro na consulta: " . mysqli_error($conexao));
-}
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
