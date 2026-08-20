@@ -44,6 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </head>
 <body>
+
+        <header>
+            <h1>Cadastro de Usuários</h1>
+        </header>
      
 
     <form action="../public/cadastrar_usuario.php" method="POST">

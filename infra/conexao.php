@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $usuario = "root";
-$senha = "";
+$senha = "root";
 $banco = "crud_pratos_guesser_e_caio";
 
 $conexao = new mysqli($host, $usuario, $senha, $banco);

@@ -5,7 +5,13 @@ if(!isset($conexao) || $conexao === false) {
     die("Erro: Conexão com o banco de dados não estabelecida.");
 }
 
+$usuarios = mysqli_query($conexao, "SELECT id, nome FROM usuarios ORDER BY nome");
 
+$pratos = mysqli_query($conexao, "SELECT pratos.id, pratos.nome, pratos.descricao, pratos.preco,
+               pratos.categoria, usuarios.nome AS usuario
+        FROM pratos
+        INNER JOIN usuarios ON pratos.usuario_id = usuarios.id
+        ORDER BY pratos.id DESC");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = ($_POST['nome']);
@@ -56,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <h2>Adicione um Novo Prato!</h2>
 
-        <form action="public/cadastrar.php" method="POST">
+        <form action="" method="POST">
 
             <label for="nome">Nome do prato:</label>
             <input type="text" id="nome" name="nome" required>
