@@ -9,8 +9,8 @@
     
     <main>
         <h1>Gerenciar Pratos</h1>
-        <a href="public/cadastrar_prato.php">Cadastrar Prato</a>
-        <a href="public/cadastrar_usuario.php">Cadastrar Usuário</a>
+        <a href="cadastrar_prato.php">Cadastrar Prato</a>
+        <a href="cadastrar_usuario.php">Cadastrar Usuário</a>
         <br><br>
 
 </body>
