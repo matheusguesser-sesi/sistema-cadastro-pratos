@@ -5,10 +5,10 @@ if(!isset($conexao) || $conexao === false) {
     die("Erro: Conexão com o banco de dados não estabelecida.");
 }
 
-$usuarios = mysqli_query($conexao, "SELECT id, nome FROM usuarios ORDER BY nome");
+$usuarios = mysqli_query($conexao, "SELECT id, nome_user FROM usuarios ORDER BY nome_user");
 
 $pratos = mysqli_query($conexao, "SELECT pratos.id, pratos.nome, pratos.descricao, pratos.preco,
-               pratos.categoria, usuarios.nome AS usuario
+               pratos.categoria, usuarios.nome_user AS usuario
         FROM pratos
         INNER JOIN usuarios ON pratos.usuario_id = usuarios.id
         ORDER BY pratos.id DESC");
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <?php while ($usuario = mysqli_fetch_assoc($usuarios)) { ?>
                     <option value="<?php echo $usuario["id"]; ?>">
-                        <?php echo htmlspecialchars($usuario["nome"]); ?>
+                        <?php echo htmlspecialchars($usuario["nome_user"]); ?>
                     </option>
                 <?php } ?>
 

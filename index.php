@@ -21,14 +21,14 @@
 include "infra/conexao.php";
 
 $sql = "SELECT pratos.id, pratos.nome, pratos.descricao, pratos.preco,
-               pratos.categoria, usuarios.nome AS usuario
+               pratos.categoria, usuarios.nome_user AS usuario
         FROM pratos
         INNER JOIN usuarios ON pratos.usuario_id = usuarios.id
         ORDER BY pratos.id DESC";
 
 $pratos = mysqli_query($conexao, $sql);
 
-$usuarios = mysqli_query($conexao, "SELECT id, nome FROM usuarios ORDER BY nome");
+$usuarios = mysqli_query($conexao, "SELECT id, nome_user FROM usuarios ORDER BY nome_user");
 
 ?>
 
